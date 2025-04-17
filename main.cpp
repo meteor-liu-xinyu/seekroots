@@ -14,6 +14,16 @@ int main()
         cout << "请输入多项式的系数（从高到低），以空格分隔： ";
         string input;
         getline(cin, input);
+        for (char &c : input)
+        {
+            if (c == ',')
+                c = ' '; // 将逗号替换为空格
+            else if ((c < '0' || c > '9') && c != '-' && c != '.')
+            {
+                cout << "输入错误，请重新输入！" << endl;
+                continue;
+            }
+        }
         stringstream ss(input);
         double coefficient;
         while (ss >> coefficient)
