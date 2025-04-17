@@ -26,20 +26,6 @@
 
 本程序采用 MIT 许可证，详情见 LICENSE 文件。
 
-
-## Program Introduction
-This is a root-finding program written in C++, suitable for equations from first to fourth degree. For these equations, the program uses standard root-finding formulas to calculate all roots in the complex domain. For equations of fifth degree and higher, the program employs the Newton-Raphson iteration method to find as many roots as possible. Note that the roots may not be precise when they are large or widely scattered.
-
-## Features
-- **First to Fourth Degree Equations:** Directly uses root-finding formulas to calculate all roots.
-- **Fifth Degree and Higher Equations:** Uses Newton-Raphson iteration method for solving.
-- **Complex Domain:** Supports calculation of complex roots.
-- **User-Friendly:** Simple command-line interface, easy to use.
-
-## Usage
-1. Enter the coefficients of the equation separated by spaces.
-2. Run the program, and it will output all roots of the equation.
-
 ## Example
 For the equation  $ ax^4 + bx^3 + cx^2 + dx + e = 0 $ , enter the coefficients  $ a \ b \ c \ d \ e $ , and the program will output all roots.
 
