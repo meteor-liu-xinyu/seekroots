@@ -8,43 +8,48 @@ int main()
     SetConsoleCP(65001); // 设置控制台输入代码页为 UTF-8
     SetConsoleOutputCP(65001); // 设置控制台输出代码页为 UTF-8
 
-    while (true)
-    {
-        vector<double> coefficients;
-        cout << "请输入多项式的系数（从高到低），以空格分隔： ";
-        string input;
-        getline(cin, input);
-        for (char &c : input)
-        {
-            if (c == ',')
-                c = ' '; // 将逗号替换为空格
-            else if ((c < '0' || c > '9') && c != '-' && c != '.')
-            {
-                cout << "输入错误，请重新输入！" << endl;
-                continue;
-            }
-        }
-        stringstream ss(input);
-        double coefficient;
-        while (ss >> coefficient)
-        {
-            coefficients.push_back(coefficient);
-        }
+    // while (true)
+    // {
+    //     vector<double> coefficients;
+    //     cout << "请输入多项式的系数（从高到低），以空格分隔： ";
+    //     string input;
+    //     getline(cin, input);
+    //     bool flag = true;
+    //     for (char &c : input)
+    //     {
+    //         if (c == ',')
+    //             c = ' '; // 将逗号替换为空格
+    //         else if ((c < '0' || c > '9') && c != '-' && c != '.' && c != ' ')
+    //         {
+    //             cout << "输入错误，请重新输入！" << endl;
+    //             flag = false;
+    //             break;
+    //         }
+    //     }
+    //     if (flag == true)
+    //     {
+    //         stringstream ss(input);
+    //         double coefficient;
+    //         while (ss >> coefficient)
+    //         {
+    //             coefficients.push_back(coefficient);
+    //         }
 
-        SeekRoots function(coefficients);
-        function.FindRoots();
-        function.PrintFunction();
-        function.PrintRoots();
-
-        cout << "是否继续？(y/n)  ";
-        char choice;
-        cin >> choice;
-        while(getchar()!='\n');
-        if (choice != 'y' && choice != 'Y')
-        {
-            break;
-        }
-    }
+    //         SeekRoots function(coefficients);
+    //         function.FindRoots();
+    //         function.PrintFunction();
+    //         function.PrintRoots();
+            
+    //         cout << "是否继续？(y/n)  ";
+    //         char choice;
+    //         cin >> choice;
+    //         while(getchar()!='\n');
+    //         if (choice != 'y' && choice != 'Y')
+    //         {
+    //             break;
+    //         }
+    //     }
+    // }
 
     // SeekRoots function1({1,-4,0,16,-16}); // !test
     // function1.FindRoots();
@@ -65,6 +70,11 @@ int main()
     // function4.FindRoots();
     // function4.PrintFunction();
     // function4.PrintRoots();
+
+    SeekRoots function5({1,-6,12,-8}); // !test
+    function5.FindRoots();
+    function5.PrintFunction();
+    function5.PrintRoots();
 
     cout << "按任意键退出...";
     _getch();
